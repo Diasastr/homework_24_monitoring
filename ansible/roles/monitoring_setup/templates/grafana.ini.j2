@@ -1,0 +1,44 @@
+[paths]
+# Шляхи для збереження даних, логів, плагінів та файлів налаштувань
+data = /var/lib/grafana/data
+logs = /var/log/grafana
+plugins = /var/lib/grafana/plugins
+provisioning = /etc/grafana/provisioning
+
+[server]
+# Налаштування сервера, включаючи порт і домен
+http_port = 3000
+domain = {{ grafana_domain }}
+root_url = %(protocol)s://%(domain)s:%(http_port)s/
+# Переконайтеся, що ваша група безпеки EC2 дозволяє трафік на вказаний порт.
+
+[database]
+# Налаштування бази даних. Для більших розгортань розгляньте можливість використання RDS для бази даних Grafana.
+type = sqlite3
+path = grafana.db
+
+[security]
+# Налаштування безпеки, включаючи користувача адміністратора та пароль
+admin_user = {{ grafana_admin_user }}
+admin_password = {{ grafana_admin_password }}
+secret_key = {{ grafana_secret_key }}
+# Розгляньте можливість використання AWS Secrets Manager для зберігання секретних ключів.
+
+[users]
+# Дозволяє або забороняє реєстрацію нових користувачів
+allow_sign_up = false
+
+[auth.anonymous]
+# Увімкнення або вимкнення анонімного доступу
+enabled = false
+
+[log]
+# Налаштування логування
+level = info
+mode = console
+
+[analytics]
+# Перевірка на наявність оновлень
+check_for_updates = true
+
+# Додайте будь-які інші конфігурації за потреби.

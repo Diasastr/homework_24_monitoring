@@ -1,0 +1,10 @@
+---
+# tasks/main.yml
+
+- name: Install Prometheus
+  include_tasks: install_prometheus.yml
+  # Включення завдань для встановлення Prometheus
+
+- name: Install Grafana
+  include_tasks: install_grafana.yml
+  # Включення завдань для встановлення Grafana

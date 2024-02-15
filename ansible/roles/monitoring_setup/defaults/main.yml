@@ -1,0 +1,16 @@
+---
+# defaults/main.yml
+
+# Домен для Grafana (замініть на власний домен або IP-адресу EC2 інстансу)
+grafana_domain: "grafana.example.com"
+
+# Дані для входу адміністратора Grafana
+grafana_admin_user: "admin"
+grafana_admin_password: "securepassword"
+
+# Секретний ключ для Grafana (генеруйте унікальний для кожного розгортання)
+grafana_secret_key: "longrandomstring"
+
+# Версії програмного забезпечення
+grafana_version: "7.5.4"
+prometheus_version: "2.26.0"

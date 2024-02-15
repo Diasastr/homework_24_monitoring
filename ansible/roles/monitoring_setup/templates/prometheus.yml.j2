@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 15s  # За замовчуванням, збирає метрики кожні 15 секунд.
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+# Щоб моніторити Gitea, розкоментуйте наступний розділ і відкоригуйте IP-адресу/порт за необхідності.
+# Переконайтеся, що Gitea налаштовано на відкриття метрик за вказаним ендпоінтом.
+#
+#  - job_name: 'gitea'
+#    metrics_path: '/metrics'
+#    static_configs:
+#      - targets: ['gitea:3000']
+

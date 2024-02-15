@@ -1,0 +1,14 @@
+---
+# handlers/main.yml
+
+- name: Restart Prometheus
+  systemd:
+    name: prometheus
+    state: restarted
+  # Перезапуск Prometheus
+
+- name: Restart Grafana
+  systemd:
+    name: grafana-server
+    state: restarted
+  # Перезапуск Grafana

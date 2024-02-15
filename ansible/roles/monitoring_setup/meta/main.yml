@@ -1,0 +1,30 @@
+---
+galaxy_info:
+  role_name: monitoring_setup
+  author: Ваше Ім'я
+  description: Роль для налаштування Prometheus та Grafana на AWS EC2
+  company: Ваша Компанія
+
+  # Мінімальна необхідна версія Ansible
+  min_ansible_version: 2.9
+
+  # Платформи, які підтримує ваша роль (налаштуйте відповідно до своїх потреб)
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+    - name: EL
+      versions:
+        - 7
+        - 8
+
+  # Категорії, які найкраще описують вашу роль, допомагають при пошуку в Galaxy
+  galaxy_tags:
+    - monitoring
+    - prometheus
+    - grafana
+    - aws
+    - ec2
+
+dependencies: [] # У цьому налаштуванні немає зовнішніх залежностей ролі (взагілі треба гіті, але завдання лише про моніторинг)
